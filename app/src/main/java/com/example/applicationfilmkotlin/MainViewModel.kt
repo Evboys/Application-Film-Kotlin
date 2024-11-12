@@ -21,4 +21,9 @@ class MainViewModel: ViewModel() {
             movies.value = service.searchmovies(apikey,motcle).results
         }
     }
+    fun lastMovies(){
+        viewModelScope.launch {
+            movies.value = service.lastmovies(apikey).results
+        }
+    }
 }
